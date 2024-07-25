@@ -4,52 +4,38 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>계산 결과</title>
+<title>길이 변환</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-	<%
-		String number1String = request.getParameter("number1");
-		String number2String = request.getParameter("number2");
-		
-		int number1Int = Integer.parseInt(number1String);
-		int number2Int = Integer.parseInt(number2String);
-		
-		String how = request.getParameter("how");
-		
-	%>
-	
-	<%!
-	
-		public double calculation(String how, int number1, int number2){
-			
-			double number1Double = number1;
-			double number2Double = number2;
-		
-			if(how.equals("+")){
-				return number1Double + number2Double;
-			}else if(how.equals("-")){
-				return number1Double - number2Double;
-			}else if(how.equals("X")){
-				return number1Double * number2Double;
-			}else{
-				return number1Double / number2Double;
-			}
-		
-		}
-	
-	%>
-	
-	
+	<div class="container">
+		<div>
+			<h1>길이 변환</h1>
+		</div>
+		<form method="post" action="/jsp/test/test05.jsp">
+			<div class="d-flex">
+				<div>
+					<input type="text" name="length" class="form-control">
+				</div>
+				<div>
+					cm
+				</div>		
+			</div>
+			<div>
+				<label>인치<input type="checkbox" name="lengthType" value="inch"></label>
+				<label>야드<input type="checkbox" name="lengthType" value="yard"></label>
+				<label>피트<input type="checkbox" name="lengthType" value="feet"></label>
+				<label>미터<input type="checkbox" name="lengthType" value="meter"></label>
+			</div>
+			<div>
+				<button type="submit" class="btn btn-success text-white">변환</button>
+			</div>
+		</form>
 
-	<h1>계산 결과</h1>
-	<div class="display-4">
-		<%= number1Int %> <%= how %> <%= number2Int %> = <span class="text-info"><%= calculation(how, number1Int, number2Int) %></span>
 	</div>
-	
-	
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
