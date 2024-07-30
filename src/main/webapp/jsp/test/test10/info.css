@@ -1,1 +1,35 @@
 @charset "UTF-8";
+
+#wrap {
+	width: 1500px;
+	height: 800px;
+	margin: 0 auto;
+}
+
+header {
+	height: 100px;
+}
+
+header > .banner {
+	font-size: 40px;
+}
+
+.main-menu {
+	height: 100px;
+	font-size: 20px;
+}
+
+.contents > .musicInfo {
+	height: 250px;
+}
+
+.musicInfo > .musicThumbnail {
+	height: 250px;
+}
+
+
+
+
+footer {
+	height: 100px;
+}
