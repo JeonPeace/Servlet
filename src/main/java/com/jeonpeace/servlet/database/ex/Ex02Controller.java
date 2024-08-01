@@ -2,8 +2,9 @@ package com.jeonpeace.servlet.database.ex;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,19 +28,15 @@ public class Ex02Controller extends HttpServlet{
 		// 접속
 		mysqlService.connect();
 		
-		ResultSet resultSet = mysqlService.select("SELECT * FROM `used_goods`");
+		List<Map<String, Object>> resultList = mysqlService.select("SELECT * FROM `used_goods`");
 		
-		try {
-			while(resultSet.next()) {
-				String title = resultSet.getString("title");
-				int price = resultSet.getInt("price");
-				
-				out.println("제목: " + title + " 가격: " + price);
-				
-			}
-		} catch (SQLException e) {
+		for(Map<String, Object> resultMap:resultList) {
 			
-			e.printStackTrace();
+			String title = (String)resultMap.get("title");
+			int price = (Integer)resultMap.get("price");
+			
+			out.println("제목 : " + title + ", 가격 : " + price);
+			
 		}
 		
 		String query = "INSERT INTO `used_goods`\r\n"
