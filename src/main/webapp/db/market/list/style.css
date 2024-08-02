@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+#wrap {
+	
+	width: 1000px;
+	margin: 0 auto;
+	
+}
+
+header {
+	
+	height: 150px;
+	
+}
+
+.main-menu {
+	
+	height: 100px;
+	font-size: 30px;
+	
+}
+
+.main-content {
+
+}
+
+.goodsSection {
+	
+	width: 300px;
+	height: 300px;
+	
+}
+
+.goodsImage {
+	
+	height: 150px;
+	
+}
+
+footer {
+	
+	height: 150px;
+	
+}

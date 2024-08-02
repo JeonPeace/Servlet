@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>즐겨찾기 리스트</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
 <body>
 
@@ -19,7 +20,7 @@
 		
 	%>
 	
-	<table border="1">
+	<table border="1" class="table">
 		<thead>
 			<tr>
 				<th>사이트</th>
@@ -32,7 +33,7 @@
 			<tr>
 				<td><%= resultMap.get("name") %></td>
 				<td><%= resultMap.get("url") %></td>
-				<td><a href="/db/url/delete?deleteId=<%= resultMap.get("id") %>">삭제하기</a></td>
+				<td><a href="/db/url/delete?deleteId=<%= resultMap.get("id") %>" class="btn btn-danger btn-sm">삭제</a></td>
 			</tr>
 		<% } %>
 		</tbody>
